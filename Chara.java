@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.*;
 import javax.swing.*;
 
 public class Chara extends Entity
@@ -16,12 +17,12 @@ public class Chara extends Entity
 
 	public boolean canMove(Map m, int nx, int ny)
 	{
-		return (!(m.map[nx][ny] instanceof terrain) && (nx < m.map.length && nx >= 0) && (m.map[nx].length > ny && ny >= 0));
+		return (!(m.map[nx][ny] instanceof Terrain) && (nx < m.map.length && nx >= 0) && (m.map[nx].length > ny && ny >= 0));
 	}
 
-	public void move(int nx, int ny)
+	public void move(Map m, int nx, int ny)
 	{
-		if (canMove(nx, ny))
+		if (canMove(m, nx, ny))
 			m.map[nx][ny] = this;
 	}
 
@@ -33,10 +34,10 @@ public class Chara extends Entity
 	public int damage(Attack att)
 	{
 		health = health-att.dmgValue(resistance, armor);
-		return att.dmgValue();
+		return att.dmgValue(this.resistance, this.armor);
 	}
 
-	public int attack(Character enm, Attack att)
+	public int attack(Chara enm, Attack att)
 	{
 		int bef = enm.getHealth();
 		enm.damage(att);
