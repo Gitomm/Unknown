@@ -1,11 +1,14 @@
 public class Character extends Entity
 {
 	private int health;
-
-	public Character(BufferedImage i, int xo, int yo, int h)
+	private int armor;
+	private int resistance;
+	public Character(BufferedImage i, int xo, int yo, int h, int arm, int res)
 	{
 		super(i, xo, yo);
 		health = h;
+		armor = arm;
+		resistance = res;
 	}
 
 	public boolean canMove(Map m, int nx, int ny)
@@ -26,7 +29,7 @@ public class Character extends Entity
 
 	public int damage(Attack att)
 	{
-		health = health-att.dmgValue();
+		health = health-att.dmgValue(resistance, armor);
 		return att.dmgValue();
 	}
 
