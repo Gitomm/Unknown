@@ -24,6 +24,12 @@ public class Character extends Entity
 		return health;
 	}
 
+	public int damage(Attack att)
+	{
+		health = health-att.dmgValue();
+		return att.dmgValue();
+	}
+
 	public int attack(Character enm, Attack att)
 	{
 		int bef = enm.getHealth();
