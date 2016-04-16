@@ -1,10 +1,11 @@
 import java.awt.*;
+import javax.swing.*;
 
 public class Entity
 {
 	private BufferedImage sprite;
-	private int x;
-	private int y;
+	public int x;
+	public int y;
 
 	public Entity(BufferedImage i, int xo, int yo)
 	{

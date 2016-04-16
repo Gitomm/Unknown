@@ -1,9 +1,12 @@
-public class Character extends Entity
+import java.awt.*;
+import javax.swing.*;
+
+public class Chara extends Entity
 {
 	private int health;
 	private int armor;
 	private int resistance;
-	public Character(BufferedImage i, int xo, int yo, int h, int arm, int res)
+	public Chara(BufferedImage i, int xo, int yo, int h, int arm, int res)
 	{
 		super(i, xo, yo);
 		health = h;
