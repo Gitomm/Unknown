@@ -1,6 +1,6 @@
 public class Map
 {
-	private Object[][] map;
+	public Object[][] map;
 
 	public Map(Object[][] o)
 	{
