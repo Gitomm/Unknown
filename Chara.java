@@ -23,7 +23,11 @@ public class Chara extends Entity
 	public void move(Map m, int nx, int ny)
 	{
 		if (canMove(m, nx, ny))
+		{
 			m.map[nx][ny] = this;
+			this.x = nx;
+			this.y = ny;
+		}
 	}
 
 	public int getHealth()
