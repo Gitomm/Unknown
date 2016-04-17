@@ -7,7 +7,7 @@ public class Knight extends Chara
 	private Attack slash = new Attack("Weapon", 3);
 	private Attack stab = new Attack("Weapon", 5);
 
-	public Knight(BufferedImage i, int xo, int yo, int h, int arm, int res, Map m)
+	public Knight(BufferedImage i, int xo, int yo, int h, Map m)
 	{
 		super(i, xo, yo, h, 8, 2, m);
 	}

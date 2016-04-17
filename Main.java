@@ -11,7 +11,7 @@ public class main extends Applet implements KeyListener
 {
   private Rectangle rect;
   private BufferedImage plS = new BufferedImage(1, 1, 1);
-  private Chara player;
+  private Knight player;
   private Map m;
   private Entity[][] locs;
   
@@ -21,23 +21,22 @@ public class main extends Applet implements KeyListener
   {
     try
     {
-      plS = ImageIO.read(new File("\\Enemies\\Goblin Jester King.PNG"));
+      plS = ImageIO.read(new File("Knight Rest.PNG"));
     }
     catch (IOException e){System.out.println(e);}
-    locs = new Entity[32][25];
+    locs = new Entity[800][600];
     m = new Map(locs);
-    player = new Chara(plS, 100, 100, 2000, 5, 2, m);
+    player = new Knight(plS, 100, 100, 2000, m);
     this.addKeyListener(this);
     keysDown = new ArrayList<Integer>();
-    rect = new Rectangle(0, 0, 50, 50);
   }
 
   public void paint(Graphics g) 
   {
-    setSize(1024, 800);
+    setSize(800, 600);
     
     Graphics2D g2 = (Graphics2D)g;
-    g2.drawImage(plS, 100, 100, null);
+    g2.drawImage(plS, player.x, player.y, null);
   }
   
   public void keyPressed(KeyEvent e) {
@@ -58,13 +57,13 @@ public class main extends Applet implements KeyListener
     int y = player.y;
     
     if (keysDown.contains(KeyEvent.VK_UP))
-      y -= 2;
+      y -= 10;
     if (keysDown.contains(KeyEvent.VK_DOWN))
-      y += 2;
+      y += 10;
     if (keysDown.contains(KeyEvent.VK_LEFT))
-      x -= 2;
+      x -= 10;
     if (keysDown.contains(KeyEvent.VK_RIGHT))
-      x += 2;
+      x += 10;
     player.move(m, x, y);
     repaint();
     

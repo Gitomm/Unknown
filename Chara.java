@@ -17,14 +17,16 @@ public class Chara extends Entity
 
 	public boolean canMove(Map m, int nx, int ny)
 	{
-		return (!(m.map[nx][ny] instanceof Terrain) && (nx < m.map.length && nx >= 0) && (m.map[nx].length > ny && ny >= 0));
+		if (nx > m.map[0].length || nx < 0 || ny > m.map.length || ny < 0)
+			return false;
+		return (!(m.map[ny][nx] instanceof Terrain) && (nx < m.map.length && nx >= 0) && (m.map[nx].length > ny && ny >= 0));
 	}
 
 	public void move(Map m, int nx, int ny)
 	{
 		if (canMove(m, nx, ny))
 		{
-			m.map[nx][ny] = this;
+			m.map[ny][nx] = this;
 			this.x = nx;
 			this.y = ny;
 		}
