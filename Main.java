@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -19,6 +20,5 @@ public class main {
       Map level = new Map(m);
       Chara player = new Chara(i, 16, 16, 200, 5, 4, level);
       level.showMap();
-      n.init();
     }
 }
