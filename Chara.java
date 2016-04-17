@@ -13,13 +13,14 @@ public class Chara extends Entity
 		health = h;
 		armor = arm;
 		resistance = res;
+		m.map[yo][xo] = this;
 	}
 
 	public boolean canMove(Map m, int nx, int ny)
 	{
-		if (nx > m.map[0].length || nx < 0 || ny > m.map.length || ny < 0)
+		if (nx > m.map[0].length || nx < 0 || ny > m.map.length || ny < 0 || nx > m.map[0].length)
 			return false;
-		return (!(m.map[ny][nx] instanceof Terrain) && (nx < m.map.length && nx >= 0) && (m.map[nx].length > ny && ny >= 0));
+		return (!(m.map[ny][nx] instanceof Terrain || m.map[ny][nx] instanceof Chara) && (nx < m.map[0].length && nx >= 0) && (m.map.length > ny && ny >= 0));
 	}
 
 	public void move(Map m, int nx, int ny)
@@ -27,6 +28,7 @@ public class Chara extends Entity
 		if (canMove(m, nx, ny))
 		{
 			m.map[ny][nx] = this;
+			m.map[ny][nx] = null;
 			this.x = nx;
 			this.y = ny;
 		}

@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class Entity
 {
-	private BufferedImage sprite;
+	public BufferedImage sprite;
 	public int x;
 	public int y;
 

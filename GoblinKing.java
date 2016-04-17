@@ -1,9 +1,18 @@
+import java.awt.*;
+import java.applet.*;
+import java.util.ArrayList;
+import java.awt.event.*;
+import java.awt.image.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.*;
+
 public class GoblinKing extends Chara
 {
 	private Attack basic = new Attack ("Weapon", 3);
 	private Attack heavy = new Attack ("Weapon", 5);
 
-	public GoblinKing(BufferedImage i, int xo, int yo, int h, int arm, int res, Map m)
+	public GoblinKing(BufferedImage i, int xo, int yo, int h, Map m)
 	{
 		super(i, xo, yo, h, 4, 4, m);
 	}
@@ -15,7 +24,7 @@ public class GoblinKing extends Chara
 
 	public int heavy(Chara player)
 	{
-		return this.attack(playe, heavy);
+		return this.attack(player, heavy);
 	}
 
 	public void summonGoblin(Map m)

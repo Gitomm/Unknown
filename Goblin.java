@@ -1,8 +1,17 @@
+import java.awt.*;
+import java.applet.*;
+import java.util.ArrayList;
+import java.awt.event.*;
+import java.awt.image.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.*;
+
 public class Goblin extends Chara
 {
 	private Attack spear = new Attack("Weapon", 3);
 
-	public Goblin(BufferedImage i, int xo, int yo, int h, int arm, int res, Map m)
+	public Goblin(BufferedImage i, int xo, int yo, int h, Map m)
 	{
 		super(i, xo, yo, h, 3, 1, m);
 	}
