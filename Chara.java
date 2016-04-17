@@ -51,4 +51,9 @@ public class Chara extends Entity
 		enm.damage(att);
 		return (bef - enm.getHealth());
 	}
+
+	public int hit(Chara c)
+	{
+		return 0;
+	}
 }

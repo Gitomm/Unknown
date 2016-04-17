@@ -20,4 +20,10 @@ public class Goblin extends Chara
 	{
 		return this.attack(player, spear);
 	}
+
+	public int hit(Chara player)
+	{
+		spear(player);
+		return 0;
+	}
 }

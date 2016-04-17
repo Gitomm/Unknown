@@ -31,4 +31,13 @@ public class GoblinKing extends Chara
 	{
 
 	}
+
+	public int hit(Chara player)
+	{
+		if (Math.random() < 0.4)
+			heavy(player);
+		else
+			basic(player);
+		return 0;
+	}
 }
