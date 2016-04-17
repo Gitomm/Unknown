@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.image.*;
 import javax.swing.*;
+import javax.imageio.*;
+import java.awt.event.*;
 
 public class Entity
 {
@@ -8,16 +10,17 @@ public class Entity
 	public int x;
 	public int y;
 
-	public Entity(BufferedImage i, int xo, int yo)
+	public Entity(BufferedImage i, int xo, int yo, Map m)
 	{
 		sprite = i;
 		x = xo;
-		y =yo;
+		y = yo;
+		m[y][x] = this;
 	}
-	
-	public void showSprite()
+
+	public void showSprite(Map m)
 	{
-		Graphics g = panel.getGraphics();
+		Graphics g = m.panel.getGraphics();
 		g.drawImage(sprite, x, y, null);
 	}
 }

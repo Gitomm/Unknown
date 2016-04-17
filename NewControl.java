@@ -4,6 +4,7 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Graphics2D;
+
 public class NewControl extends Applet implements KeyListener{
     public void init() {
       this.addKeyListener(this);

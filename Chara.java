@@ -7,9 +7,9 @@ public class Chara extends Entity
 	private int health;
 	private int armor;
 	private int resistance;
-	public Chara(BufferedImage i, int xo, int yo, int h, int arm, int res)
+	public Chara(BufferedImage i, int xo, int yo, int h, int arm, int res, Map m)
 	{
-		super(i, xo, yo);
+		super(i, xo, yo, m);
 		health = h;
 		armor = arm;
 		resistance = res;
