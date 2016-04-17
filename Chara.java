@@ -4,9 +4,9 @@ import javax.swing.*;
 
 public class Chara extends Entity
 {
-	private int health;
-	private int armor;
-	private int resistance;
+	public int health;
+	public int armor;
+	public int resistance;
 	public Chara(BufferedImage i, int xo, int yo, int h, int arm, int res, Map m)
 	{
 		super(i, xo, yo, m);
@@ -41,8 +41,8 @@ public class Chara extends Entity
 
 	public int damage(Attack att)
 	{
-		health = health-att.dmgValue(resistance, armor);
-		return att.dmgValue(this.resistance, this.armor);
+		health = health-att.dmgValue(this);
+		return att.dmgValue(this);
 	}
 
 	public int attack(Chara enm, Attack att)

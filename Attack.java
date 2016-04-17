@@ -9,13 +9,13 @@ public class Attack
 		type = ty;
 	}
 
-	public int dmgValue(int res, int arm)
+	public int dmgValue(Chara c)
 	{
 		if (type.equals("Magic"))
 		{
-			return baseDamage*20 - res*5;
+			return baseDamage*20 - c.resistance*5;
 		}
-		return baseDamage*20 - arm*5;
+		return baseDamage*20 - c.armor*5;
 	}
 
 }
