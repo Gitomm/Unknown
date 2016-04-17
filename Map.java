@@ -1,5 +1,9 @@
+import javax.swing.*;
+
 public class Map
 {
+	public JFrame frame = new JFrame("Unknown: The Game");
+	public JPanel panel = new JPanel();
 	public Object[][] map;
 
 	public Map(Object[][] o)
@@ -9,9 +13,9 @@ public class Map
 
 	public void showMap()
 	{
-		for (Object o : map)
+		for (Entity e : map)
 		{
-			o.showSprite();
+			e.showSprite();
 		}
 	}
 }
