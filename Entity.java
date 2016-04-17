@@ -15,7 +15,7 @@ public class Entity
 		sprite = i;
 		x = xo;
 		y = yo;
-		m[y][x] = this;
+		m.map[y][x] = this;
 	}
 
 	public void showSprite(Map m)

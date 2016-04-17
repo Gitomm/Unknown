@@ -4,18 +4,22 @@ public class Map
 {
 	public JFrame frame = new JFrame("Unknown: The Game");
 	public JPanel panel = new JPanel();
-	public Object[][] map;
+	public Entity[][] map;
 
-	public Map(Object[][] o)
+	public Map(Entity[][] o)
 	{
 		map = o;
 	}
 
 	public void showMap()
 	{
-		for (Entity e : map)
+		for (Entity[] o : map)
 		{
-			e.showSprite();
+
+			for (Entity e : o)
+			{
+				e.showSprite(this);
+			}
 		}
 	}
 }
