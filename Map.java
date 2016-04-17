@@ -18,7 +18,8 @@ public class Map
 
 			for (Entity e : o)
 			{
-				e.showSprite(this);
+				if (e instanceof Chara || e instanceof Terrain)
+					e.showSprite(this);
 			}
 		}
 	}
