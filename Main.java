@@ -116,8 +116,8 @@ public class main extends Applet implements KeyListener
       {
         battle = false;
         m.map[collided.y][collided.x] = null;
-        collided.y = 0;
-        collided.x = 0;
+        collided.y = 1000;
+        collided.x = 1000;
         collided = null;
         repaint();
       }
